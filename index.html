@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="title">Pizza or burger?</h1>
+
+    <label>
+        Chose a color:
+        <input type="color">
+    </label>
+
+    <button>Open popup</button>
+
+    <div class="popup">
+        <div class="popup__content">
+            <img src="https://media1.giphy.com/media/SggILpMXO7Xt6/giphy.gif">
+        </div>
+    </div>
+  </body>
+  <style>
+    #title {
+        background: green;
+        font-size: 46px;
+    }
+
+    button {
+      display: block;
+      margin-top: 20px;
+    }
+
+    .popup {
+        position: fixed;
+        top: 0;
+        width: 100vw;
+        height: 100vh;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        background: rgba(0,0,0,.2);
+    }
+  </style>
+  <script>
+    document.querySelector('input').addEventListener('input', () => {
+        document.getElementById('title').style.color = document.querySelector('input').value
+    })
+
+    document.querySelector('button').addEventListener('click', () => {
+        document.querySelector('.popup').style.display = 'flex'
+    })
+
+    document.querySelector('.popup').addEventListener('click', () => {
+        document.querySelector('.popup').style.display = 'none'
+    }, false)
+  </script>
+</html>
